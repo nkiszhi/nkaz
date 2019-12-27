@@ -1,0 +1,16 @@
+__pycache__/
+*.npy
+*.py[cod]
+*.ipynb
+*$py.class
+*.exe
+*.apk
+*.db
+*.bak
+*.tmp
+*.swp
+.DS_Store
+temp
+samples
+keys.txt
+latest.csv
