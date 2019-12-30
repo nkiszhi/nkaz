@@ -55,6 +55,7 @@ def get_downloaded_list():
 def main():
     parser = argparse.ArgumentParser(prog="nkaz", description="Download android samples from Androzoo.com")
     parser.add_argument("-k", "--keys", help="specify a file containing Androzoo keyes.", type=argparse.FileType('r'))
+    parser.add_argument("-s", "--sha256", help="specify a file containing sha256 of Androzoo samples.", type=argparse.FileType('r'))
     args = parser.parse_args()
 
     list_key = [line.rstrip('\n') for line in args.keys]
