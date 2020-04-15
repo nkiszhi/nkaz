@@ -140,7 +140,9 @@ def mov_repo():
 
 def main():
     #mov_raw_data()
-    mov_raw_samples()
+    while 1:
+        mov_raw_samples()
+        sleep(3600)
 
 if __name__ == "__main__":
     main()
