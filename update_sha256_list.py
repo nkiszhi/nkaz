@@ -6,13 +6,11 @@
 from __future__ import print_function
 import os
 
-f_sha256 = "2018.txt"
-f_1 = "2.txt"
 folder_repo = "../nkrepo/DATA/"
-list_sha256 = []
-list_sha256_left = []
 
-def main():
+def update(f_sha256, f_left):
+    list_sha256 = []
+    list_sha256_left = []
     with open(f_sha256, 'r') as f:
         for line in f:
             list_sha256.append(line.strip('\n').lower())
@@ -24,14 +22,19 @@ def main():
         #print(s)
         #print(p)
         if os.path.exists(p):
-            #print("[i]: Existed {}".format(s))
+            count = count + 1
+            print("{}: Existed {}".format(count, s))
             continue
         list_sha256_left.append(s)
         #count = count + 1
 
-    with open(f_1,'w') as f:
+    with open(f_left,'w') as f:
         for item in list_sha256_left:
             f.write('{}\n'.format(item))
+
+def main():
+    update("2017.txt", "2017_left.txt")
+    update("2018.txt", "2018_left.txt")
     
 if __name__ == "__main__":
     main()

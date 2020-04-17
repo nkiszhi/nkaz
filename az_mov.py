@@ -10,7 +10,8 @@ import shutil
 from time import sleep
 import hashlib
 
-input_folder = "./data/"
+#input_folder = "./data/"
+input_folder = "./3/"
 repo_folder = "../nkrepo/DATA/"
 
 # Move samples downloaded by wget into repo
@@ -72,6 +73,8 @@ def mov_samples():
             #os.remove(sample)
             continue
         dst_path = repo_folder+"{}/{}/{}/{}/{}".format(sha256[0],sha256[1],sha256[2],sha256[3],sha256)
+        print(src_path)
+        print(dst_path)
         if os.path.exists(dst_path):
             os.remove(dst_path)
         shutil.move(sample, dst_path)
@@ -141,9 +144,11 @@ def mov_repo():
 
 def main():
     #mov_raw_data()
-    while 1:
-        mov_raw_samples()
-        sleep(3600)
+
+    #while 1:
+    #    mov_raw_samples()
+    #    sleep(3600)
+    mov_samples()
 
 if __name__ == "__main__":
     main()
