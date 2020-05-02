@@ -49,7 +49,7 @@ def main():
     list_sha256 = [line.rstrip('\n') for line in args.sha256]
     list_url = [url.format(apikey, x) for x in list_sha256]
     dir_result = args.results
-    download(100, list_url, dir_result)
+    download(50, list_url, dir_result)
 
 if __name__ == "__main__":
     main()

@@ -34,13 +34,11 @@ def update(f_sha256, f_left):
             f.write('{}\n'.format(item))
 
 def main():
-    while 1:
-        update("2015.txt", "2015.txt")
-        update("2016.txt", "2016.txt")
-        update("2017.txt", "2017.txt")
-        update("2018.txt", "2018.txt")
-        update("2019.txt", "2019.txt")
-        sleep(3600)
+    update("2015.txt", "2015.txt")
+    update("2016.txt", "2016.txt")
+    update("2017.txt", "2017.txt")
+    update("2018.txt", "2018.txt")
+    update("2019.txt", "2019.txt")
     
 if __name__ == "__main__":
     main()
