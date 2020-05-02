@@ -19,12 +19,12 @@ def update(f_sha256, f_left):
    
     count = 0
     for s in list_sha256:
-        p = folder_repo + "{}/{}/{}/{}/{}".format(s[0],s[1],s[2],s[3],s)
+        p = folder_repo + "{}/{}/{}/{}/{}.json".format(s[0],s[1],s[2],s[3],s)
         #print(s)
         #print(p)
         if os.path.exists(p):
             count = count + 1
-            print("{}: Existed {}".format(count, s))
+            print("{}: Existed {}.json".format(count, s))
             continue
         list_sha256_left.append(s)
         #count = count + 1
@@ -34,11 +34,12 @@ def update(f_sha256, f_left):
             f.write('{}\n'.format(item))
 
 def main():
-    update("2015.txt", "2015.txt")
-    update("2016.txt", "2016.txt")
-    update("2017.txt", "2017.txt")
-    update("2018.txt", "2018.txt")
-    update("2019.txt", "2019.txt")
+    update("2015_json.txt", "2015_json.txt")
+    update("2016_json.txt", "2016_json.txt")
+    update("2017_json.txt", "2017_json.txt")
+    update("2018_json.txt", "2018_json.txt")
+    update("2019_json.txt", "2019_json.txt")
+    update("2020_json.txt", "2020_json.txt")
     
 if __name__ == "__main__":
     main()
