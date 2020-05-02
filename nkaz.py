@@ -39,9 +39,11 @@ def download(n, list_url, dir_result):
   return list_workers
 
 def main():
+    file_sha256 = "./sha256.txt"
+    dir_results = "./data"
     parser = argparse.ArgumentParser(prog="nkaz", description="Download android samples from Androzoo.com")
-    parser.add_argument("-s", "--sha256", help="Specify a file containing sha256 of Androzoo samples.", type=argparse.FileType('r'))
-    parser.add_argument("-r", "--results", help="Specify a folder to store downloaded samples.")
+    parser.add_argument("-s", "--sha256", default=file_sha256, help="Specify a file containing sha256 of Androzoo samples.", type=argparse.FileType('r'))
+    parser.add_argument("-r", "--results", default=dir_results, help="Specify a folder to store downloaded samples.")
     args = parser.parse_args()
 
     list_sha256 = [line.rstrip('\n') for line in args.sha256]

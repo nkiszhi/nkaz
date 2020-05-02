@@ -20,6 +20,7 @@ def mov_raw_samples(folder_download, folder_repo):
     count = 0
     del_count = 0
     for sample in files:
+
         if len(sample) != 152:
             continue
         sha256 = sample[88:].lower()
@@ -27,13 +28,17 @@ def mov_raw_samples(folder_download, folder_repo):
         #print(sha256)
         src_path = folder_download + sample
         #print(src_path)
+
+        # Compute SHA256
         with open(src_path, "rb") as f:
             bytes = f.read() # read entire file as bytes
             _sha256 = hashlib.sha256(bytes).hexdigest();
             #print(_sha256)
         if sha256 != _sha256:
-            #os.remove(sample)
+            #os.remove(src_path)
             continue
+
+        # Move sample
         dst_path = folder_repo + "{}/{}/{}/{}/{}".format(sha256[0],sha256[1],sha256[2],sha256[3],sha256)
         if os.path.exists(dst_path):
             os.remove(dst_path)
@@ -52,7 +57,7 @@ def mov_raw_samples(folder_download, folder_repo):
 def main():
     while 1:
         mov_raw_samples("./data/", "../nkrepo/DATA/")
-        sleep(3600)
+        sleep(600)
 
 if __name__ == "__main__":
     main()
