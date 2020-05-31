@@ -40,6 +40,7 @@ def main():
     update("2018.txt", "2018.txt")
     update("2019.txt", "2019.txt")
     update("2020.txt", "2020.txt")
+    update("sha256.txt", "sha256.txt")
     
 if __name__ == "__main__":
     main()
