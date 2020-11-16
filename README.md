@@ -1,4 +1,6 @@
-#nkaz: Download malware samples from Androzoo.com
+#nkaz: Download Android malware samples from https://androzoo.uni.lu/
+
+
 
 
 
